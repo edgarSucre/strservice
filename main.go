@@ -12,6 +12,7 @@ func main() {
 	logger := log.NewLogfmtLogger(os.Stderr)
 	var svc StringService
 	svc = stringService{}
+	//since our middleware implements StringService we can do:
 	svc = logginMiddleware{logger, svc}
 
 	/*
